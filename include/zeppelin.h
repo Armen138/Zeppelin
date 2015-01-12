@@ -13,6 +13,7 @@
 #include "http.h"
 #include "color.h"
 #include "storage.h"
+#include "resources.h"
 //#include "canvas.h"
 
 using namespace std;

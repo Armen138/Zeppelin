@@ -17,13 +17,14 @@ using namespace zep;
 int main(int argc, char* argv[]) {
     Http *http = new Http();
     Zeppelin *zep = new Zeppelin();
-    Image *star = new Image("assets/images/star.png");
+    //Image *star = new Image("assets/images/star.png");
     Color *color = new Color("#5500FF");
+    Resources *resources = new Resources("data");
     Storage *storage = new Storage("peep");
     storage->set("test1", "some information");
     zep->setColor(color);
     zep->on("draw", [&] (void* data) {
-        zep->draw(star, 100, 100, 100, 100);
+        zep->draw(resources->image("star"), 100, 100, 100, 100);
     });
     zep->on("keydown", [&] (void *data) {
         KeyEvent *key = (KeyEvent*) data;    
@@ -37,7 +38,6 @@ int main(int argc, char* argv[]) {
     });
     http->on("load", [&] (const std::string& response) {
         std::cout << "load complete" << std::endl;
-        std::cout << response << std::endl;
         storage->set("index.html", response);
     });
     http->on("header", [&] (const std::string& header) {

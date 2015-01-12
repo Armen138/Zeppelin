@@ -6,7 +6,6 @@ zep::Color::Color(const std::string& colorcode){
 }
 
 void zep::Color::set(const std::string& colorcode) {
-    // cout << "color: " << colorcode << endl;
     asGiven = colorcode;
     if(colorcode[0] == '#'){
             red = (unsigned char)(unhex(colorcode[1]) * 16 + unhex(colorcode[2]));

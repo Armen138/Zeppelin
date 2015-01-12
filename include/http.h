@@ -1,6 +1,7 @@
 #ifndef _XHR_H
 #define _XHR_H
 #include <curl/curl.h>
+#include <functional>
 #include <map>
 
 using namespace std;

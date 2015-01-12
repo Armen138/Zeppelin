@@ -27,3 +27,6 @@ std::string zep::Storage::get(const std::string& property) {
 	return data;
 }
 
+//std::string& zep::Storage::operator[] (const std::string& key) {
+    //return this->get(key);
+//}

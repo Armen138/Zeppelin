@@ -9,6 +9,7 @@ namespace zep {
             Storage(const std::string& place);
             void set(const std::string& key, const std::string& value);
             std::string get(const std::string& key);
+            //std::string& operator[] (const std::string& key);
         private:
             std::string place;            
     };

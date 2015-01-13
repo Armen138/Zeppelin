@@ -1,0 +1,8 @@
+{
+    "name": "Test Zeppelin 2D",
+    "author": "Armen138",
+    "resources": "resources.json",
+    "main": "testgame.lua",
+    "update": "http://update.armen138.com/testzep/manifest.json",
+    "version": "0.0.1"
+}

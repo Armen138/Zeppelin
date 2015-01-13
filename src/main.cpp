@@ -15,13 +15,10 @@ using namespace zep;
  *   -keydown
  */
 int main(int argc, char* argv[]) {
-    Http *http = new Http();
+    //Http *http = new Http();
     Zeppelin *zep = new Zeppelin();
-    //Image *star = new Image("assets/images/star.png");
     Color *color = new Color("#5500FF");
     Resources *resources = new Resources("data");
-    Storage *storage = new Storage("peep");
-    storage->set("test1", "some information");
     zep->setColor(color);
     zep->on("draw", [&] (void* data) {
         zep->draw(resources->image("star"), 100, 100, 100, 100);
@@ -36,17 +33,17 @@ int main(int argc, char* argv[]) {
             zep->exit();
         }
     });
-    http->on("load", [&] (const std::string& response) {
-        std::cout << "load complete" << std::endl;
-        storage->set("index.html", response);
-    });
-    http->on("header", [&] (const std::string& header) {
-        std::cout << "header received " << header << std::endl;
-    });
-    http->post("http://armen138.me/index.html", { 
-            { "test", "info" }, 
-            { "test2", "testinfo"}  
-        });
+    //http->on("load", [&] (const std::string& response) {
+        //std::cout << "load complete" << std::endl;
+        //storage->set("index.html", response);
+    //});
+    //http->on("header", [&] (const std::string& header) {
+        //std::cout << "header received " << header << std::endl;
+    //});
+    //http->post("http://armen138.me/index.html", { 
+            //{ "test", "info" }, 
+            //{ "test2", "testinfo"}  
+        //});
     zep->run();
     delete zep;
     return 0;

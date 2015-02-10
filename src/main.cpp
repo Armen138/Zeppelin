@@ -16,11 +16,20 @@ using namespace zep;
  */
 int main(int argc, char* argv[]) {
     Zeppelin *zep = new Zeppelin();
+	int x = 100;
+	int y = 100;
+	std::map<std::string, bool> keyDown;
     //Color *color = new Color("#5500FF");
     Resources *resources = new Resources("data");
     //zep->setColor(color);
     zep->on("draw", [&] (void* data) {
-        zep->draw(resources->image("star"), 100, 100, 100, 100);
+		if(keyDown["left"]) {
+			x--;
+		}
+		if(keyDown["right"]) {
+			x++;
+		}
+        zep->draw(resources->image("star"), x, y, 100, 100);
     });
     zep->on("keydown", [&] (void *data) {
         KeyEvent *key = (KeyEvent*) data;    
@@ -31,7 +40,12 @@ int main(int argc, char* argv[]) {
         if(key->name == "escape") {
             zep->exit();
         }
+		keyDown[key->name] = true;
     });
+	zep->on("keyup", [&] (void *data) {
+        KeyEvent *key = (KeyEvent*) data;    
+		keyDown[key->name] = false;
+	});
     zep->run();
     delete zep;
     return 0;

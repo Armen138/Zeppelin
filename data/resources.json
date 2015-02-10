@@ -1,6 +1,8 @@
 {
     "images": {
         "star": "assets/images/star.png"
-    }
+    },
+	"maps": {
+		"level1": "assets/maps/level1.json"
+	}
 }
-

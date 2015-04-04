@@ -79,6 +79,14 @@ void zep::Zeppelin::setColor(Color* color) {
               float(color->getAlpha()) / 255.0f);
 }
 
+void Zeppelin::draw(GameObject* gameObject) {
+	AABB box = gameObject->getBoundingBox();
+	Image* image = gameObject->getImage();
+	if(image != NULL) {
+		this->draw(image, box.x, box.y, box.width, box.height);
+	}
+}
+
 void Zeppelin::draw(Image* image, double x, double y, double w, double h) {
     glPushAttrib(GL_COLOR_BUFFER_BIT);
     //glColor4f(1.0f, 1.0f, 1.0f, 1.0f); //(float)this->alpha);

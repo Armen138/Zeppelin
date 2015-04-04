@@ -6,7 +6,7 @@ CXX_FLAGS = -Wall -fexceptions  -std=c++0x -g -c -I../glfw/deps/ `pkg-config --c
 CXX_LDFLAGS = -lcurl `pkg-config --libs --static glfw3`
 #CXX_LDFLAGS_WIN32 = ../v8/out/ia32.release/obj.target/tools/gyp/libv8_base.ia32.a ../v8/out/ia32.release/obj.target/tools/gyp/libv8_snapshot.a ./win32.ext/glfw/lib-mingw/libglfw.a -Bstatic -static-libgcc -static-libstdc++ -L./win32.ext/curl/lib -lcurl -lidn -lrtmp -lssh2 -lcrypto -lwldap32 -lssl  -lz -lwinmm -lws2_32 -lpthread -lopengl32
 
-OBJS = main zeppelin image http color storage resources
+OBJS = main zeppelin image http color storage resources gameobject tiled
 #localstorage xhr canvas color image jsgm
 OUTFILE = zeppelin
 OUTFILE_WIN32 = zeppelin.exe

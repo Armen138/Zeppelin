@@ -14,6 +14,8 @@
 #include "color.h"
 #include "storage.h"
 #include "resources.h"
+#include "gameobject.h"
+
 //#include "canvas.h"
 
 using namespace std;
@@ -62,6 +64,7 @@ namespace zep {
         void setColor(Color* color);
         void draw(Image* image, double x, double y, double width = 0, double height = 0);
         void draw(Image* image, double x, double y, double sw, double sh, double dx, double dy, double dw, double dh);
+		void draw(GameObject* gameObject);
         void exit();
         private:
         void init(int width, int height, bool fullscreen);

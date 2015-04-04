@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
 	std::map<std::string, bool> keyDown;
     //Color *color = new Color("#5500FF");
     Resources *resources = new Resources("data");
+	GameObject *object = new GameObject(resources->image("star"));
     //zep->setColor(color);
     zep->on("draw", [&] (void* data) {
 		if(keyDown["left"]) {
@@ -29,7 +30,8 @@ int main(int argc, char* argv[]) {
 		if(keyDown["right"]) {
 			x++;
 		}
-        zep->draw(resources->image("star"), x, y, 100, 100);
+//        zep->draw(resources->image("star"), x, y, 100, 100);
+		zep->draw(object);
     });
     zep->on("keydown", [&] (void *data) {
         KeyEvent *key = (KeyEvent*) data;    

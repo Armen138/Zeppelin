@@ -2,7 +2,13 @@
     "images": {
         "star": "assets/images/star.png"
     },
-	"maps": {
-		"level1": "assets/maps/level1.json"
+    "maps": {
+        "level1": "assets/maps/level1.json"
+    },
+	"gameobjects": {
+		"star": {
+			"boundingBox": { "x": 0, "y": 0, "width": 32, "height": 32 },
+			"soundEffects": {}
+		}		
 	}
 }

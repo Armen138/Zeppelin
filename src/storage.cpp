@@ -21,6 +21,7 @@ void zep::Storage::set(const std::string& property, const std::string& value) {
 std::string zep::Storage::get(const std::string& property) {
 	ifstream file;
 	string fileName =  place + "/" + property;
+	std::cout << "fetching data from " << fileName << std::endl;
 	file.open(fileName.c_str());
 	string data((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
 	file.close();

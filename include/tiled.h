@@ -12,11 +12,12 @@ namespace zep {
 	class Tiled {
 
 		public: 
-			Tiled();
-			void load(const string& src);
+			Tiled(const std::string& name);
+			~Tiled();
 			void render();
 		private:
 			std::vector<uint> data;
+			std::vector<Image*> textures;
 	};
 
 }

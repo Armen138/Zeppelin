@@ -1,14 +1,19 @@
 {
+    "gameobjects": {
+        "star": {
+            "boundingBox": {
+                "height": 32,
+                "width": 32,
+                "x": 0,
+                "y": 0
+            },
+            "soundEffects": {}
+        }
+    },
     "images": {
         "star": "assets/images/star.png"
     },
     "maps": {
-        "level1": "assets/maps/level1.json"
-    },
-	"gameobjects": {
-		"star": {
-			"boundingBox": { "x": 0, "y": 0, "width": 32, "height": 32 },
-			"soundEffects": {}
-		}		
-	}
+        "level1": "assets/maps/mainmenu.json"
+    }
 }

@@ -19,10 +19,8 @@ int main(int argc, char* argv[]) {
 	int x = 100;
 	int y = 100;
 	std::map<std::string, bool> keyDown;
-    //Color *color = new Color("#5500FF");
     Resources *resources = new Resources("data");
 	GameObject *object = new GameObject(resources->image("star"));
-    //zep->setColor(color);
     zep->on("draw", [&] (void* data) {
 		if(keyDown["left"]) {
 			x--;
